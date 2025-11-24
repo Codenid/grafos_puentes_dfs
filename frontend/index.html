@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Grafo - Puentes DFS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="app-header z-depth-1">
+        <h1>🔍 Detectar Puentes en un Grafo (DFS)</h1>
+        <div id="graphMessage" class="graph-message"></div>
+    </header>
+
+    <main class="container">
+        <aside class="left-panel z-depth-1">
+            <h3 class="section-title">Paleta</h3>
+            <div class="palette">
+                <button id="toolNode" class="tool-button active">Nodo</button>
+                <button id="toolConnector" class="tool-button">Conector</button>
+                <button id="toolHand" class="tool-button">Mano</button>
+            </div>
+
+            <div id="modeStatus" class="mode-status teal lighten-5">
+                Modo actual: Agregar nodos. Haz clic sobre el lienzo para crear nodos.
+            </div>
+
+            <h3 class="section-title">Acciones</h3>
+            <button id="generateBtn" class="btn-flat red-text">🎲 Generar grafo aleatorio</button>
+            <div class="section-title"></div>
+            <button id="detectBtn" class="btn waves">🔎 Detectar puentes</button>
+            <div class="section-title"></div>
+            <button id="clearBtn" class="btn-flat red-text">🗑️ Limpiar grafo</button>
+
+            <h3 class="section-title">Aristas</h3>
+            <ul id="edgesList" class="list"></ul>
+
+            <h3 class="section-title">Puentes detectados</h3>
+            <ul id="bridgesList" class="list"></ul>
+        </aside>
+
+        <section class="canvas-wrapper z-depth-1">
+            <canvas id="graphCanvas"></canvas>
+
+            <!-- Menú flotante de nodo -->
+            <div id="nodeMenu" class="context-menu node-menu z-depth-2" style="display:none;">
+                <button id="nodeMenuConnect" class="btn-small teal">Conectar</button>
+                <button id="nodeMenuDelete" class="btn-small red">Eliminar</button>
+            </div>
+
+            <!-- Botón flotante de eliminar arista -->
+            <div id="edgeMenu" class="context-menu edge-menu z-depth-2" style="display:none;">
+                <button id="edgeMenuDelete" class="btn-floating red" title="Eliminar arista">🗑</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
